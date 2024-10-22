@@ -47,7 +47,7 @@ def mostrar_todos_los_postres():
         print("No hay postres en la lista.\n")
 
 def eliminar_ingredientes_repetidos():
-    for postre, ingredientes in Postres.items(): # Convertir la lista de ingredientes a un conjunto para eliminar duplicados
+    for postre, ingredientes in Postres.items(): # Convertir la lista de ingredientes a un conjunto
         ingredientes_unicos = list(set(ingredientes))
         Postres[postre] = ingredientes_unicos
     print("Se han eliminado los ingredientes repetidos de todos los postres.\n")
