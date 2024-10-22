@@ -46,6 +46,12 @@ def mostrar_todos_los_postres():
     else:
         print("No hay postres en la lista.\n")
 
+def eliminar_ingredientes_repetidos():
+    for postre, ingredientes in Postres.items(): # Convertir la lista de ingredientes a un conjunto para eliminar duplicados
+        ingredientes_unicos = list(set(ingredientes))
+        Postres[postre] = ingredientes_unicos
+    print("Se han eliminado los ingredientes repetidos de todos los postres.\n")
+
 def menu():
     print(" ------------ ")
     print("Menú de Postres:")
@@ -56,7 +62,8 @@ def menu():
     print("4. Insertar ingredientes del postre")
     print("5. Eliminar ingrediente de un postre")
     print("6. Mostrar todos los postres con sus ingredientes")
-    print("7. Salir")
+    print("7. Eliminar todos los ingredientes repetidos")
+    print("8. Salir")
 
 def opciones():
     while True:
@@ -89,7 +96,10 @@ def opciones():
         elif opcion == "6":
             mostrar_todos_los_postres()
             
-        elif opcion =="7":
+        elif opcion == "7":
+            eliminar_ingredientes_repetidos()
+            
+        elif opcion == "8":
             print("Saliendo del programa.")
             break
 
